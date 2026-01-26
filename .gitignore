@@ -8,6 +8,7 @@ _build/
 !.github
 !.mailmap
 !.weblate.json
+!/.odoo.yml
 # compiled python files
 *.py[co]
 __pycache__/
