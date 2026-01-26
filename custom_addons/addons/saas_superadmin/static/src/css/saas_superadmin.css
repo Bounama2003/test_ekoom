@@ -1,0 +1,33 @@
+/* SaaS Super Admin Styles */
+
+.saas_admin_button_box .oe_stat_button {
+    cursor: pointer;
+}
+
+.saas_tenant_status_draft {
+    color: #999;
+}
+
+.saas_tenant_status_active {
+    color: #00a650;
+}
+
+.saas_tenant_status_suspended {
+    color: #f0ad4e;
+}
+
+.saas_tenant_status_archived {
+    color: #d9534f;
+}
+
+.saas_pack_category_agro {
+    border-left: 4px solid #00a650;
+}
+
+.saas_pack_category_logistics {
+    border-left: 4px solid #1a75ff;
+}
+
+.saas_pack_category_real_estate {
+    border-left: 4px solid #ff6600;
+}

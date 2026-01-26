@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Menu Racine -->
+        <menuitem id="menu_saas_root" 
+                  name="SaaS Admin" 
+                  sequence="10"
+                  web_icon="base,static/description/icon.png"/> <!-- Optionnel: remplacez par votre icône si existante -->
+
+        <!-- Menu Tenants -->
+        <menuitem id="menu_saas_tenants" 
+                  name="Tenants" 
+                  parent="menu_saas_root"
+                  sequence="10" 
+                  action="action_saas_tenant"/>
+
+        <!-- Menu Business Packs -->
+        <menuitem id="menu_saas_packs" 
+                  name="Business Packs" 
+                  parent="menu_saas_root"
+                  sequence="20" 
+                  action="action_saas_pack"/>
+        <menuitem id="menu_saas_pack_categories"
+              name="Pack Categories"
+              parent="menu_saas_root"
+              sequence="15"
+              action="action_saas_pack_category"/>
+    </data>
+</odoo>

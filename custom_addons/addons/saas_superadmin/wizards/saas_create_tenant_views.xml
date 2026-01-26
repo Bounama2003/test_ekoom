@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Vue Formulaire du Wizard de Création -->
+        <record id="view_saas_create_tenant_form" model="ir.ui.view">
+            <field name="name">saas.create.tenant.form</field>
+            <field name="model">saas.create.tenant</field>
+            <field name="arch" type="xml">
+                <form string="Create New SaaS Tenant">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" placeholder="e.g., My Company Tenant"/>
+                                <field name="database_name" placeholder="e.g., my_company_db"/>
+                                <field name="company_name" placeholder="e.g., My Company Inc."/>
+                            </group>
+                            <group>
+                                <field name="admin_email" placeholder="admin@company.com" widget="email"/>
+                                <field name="admin_password" placeholder="Password for admin user"/>
+                                <field name="admin_phone" widget="phone"/>
+                                <field name="pack_id" required="1" options="{'no_create': True}"/>
+                            </group>
+                        </group>
+                        <group string="Configuration">
+                            <group>
+                                <field name="max_users"/>
+                            </group>
+                        </group>
+                        <group string="Notes">
+                            <field name="notes" nolabel="1" placeholder="Additional notes about this tenant..."/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_create_tenant" string="Create Tenant" type="object" class="btn-primary" data-hotkey="q"/>
+                        <button string="Cancel" special="cancel" class="btn-secondary" data-hotkey="z"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action pour ouvrir le Wizard de Création -->
+        <record id="action_saas_create_tenant" model="ir.actions.act_window">
+            <field name="name">Create New Tenant</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">saas.create.tenant</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

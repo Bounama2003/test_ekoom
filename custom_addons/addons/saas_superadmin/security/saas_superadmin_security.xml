@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Règle Super Admin : Accès total aux Tenants (sauf la DB Master elle-même) -->
+        <record id="saas_tenant_is_superadmin_rule" model="ir.rule">
+            <field name="name">SaaS Super Admin: Tenants Access</field>
+            <field name="model_id" ref="model_saas_tenant"/>
+            <field name="domain_force">[('database_name', '!=', 'master')]</field>
+            <field name="groups" eval="[(4, ref('group_saas_superadmin'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+
+        <!-- Règle Manager : Voir uniquement les Packs actifs -->
+        <record id="saas_pack_manager_rule" model="ir.rule">
+            <field name="name">SaaS Pack Manager: Active Only</field>
+            <field name="model_id" ref="model_saas_pack"/>
+            <field name="domain_force">[('active', '=', True)]</field>
+            <field name="groups" eval="[(4, ref('group_saas_manager'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <!-- Règle Super Admin : Accès total aux Packs (même inactifs) -->
+        <record id="saas_pack_superadmin_rule" model="ir.rule">
+            <field name="name">SaaS Pack Super Admin: All</field>
+            <field name="model_id" ref="model_saas_pack"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_saas_superadmin'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+
+        <!-- Règle Manager : Voir uniquement les Tenants Actifs ou Suspendus -->
+        <record id="saas_tenant_active_rule" model="ir.rule">
+            <field name="name">SaaS Tenant Manager: Active and Suspended Only</field>
+            <field name="model_id" ref="model_saas_tenant"/>
+            <field name="domain_force">[('state', 'in', ['active', 'suspended'])]</field>
+            <field name="groups" eval="[(4, ref('group_saas_manager'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <!-- Règle globale (Optionnelle) : Sécurité de base -->
+        <record id="saas_tenant_pack_readonly_rule" model="ir.rule">
+            <field name="name">SaaS Tenant: Global Read Access</field>
+            <field name="model_id" ref="model_saas_tenant"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_saas_manager'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+    </data>
+</odoo>

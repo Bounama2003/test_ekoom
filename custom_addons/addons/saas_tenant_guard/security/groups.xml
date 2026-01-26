@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_saas_tenant" model="res.groups">
+        <field name="name">SaaS Tenant</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">Default group for SaaS tenant users. Has restricted access.</field>
+    </record>
+
+    <record id="group_saas_tenant_admin" model="res.groups">
+        <field name="name">SaaS Tenant Admin</field>
+        <!-- Only inherit the basic SaaS tenant group; do NOT inherit base.group_system to prevent module installation rights -->
+        <field name="implied_ids" eval="[(4, ref('group_saas_tenant'))]"/>
+        <field name="comment">Administrator group for SaaS tenant. Can manage users but cannot install unauthorized modules.</field>
+    </record>
+</odoo>

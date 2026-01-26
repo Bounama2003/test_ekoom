@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="category_agro" model="saas.pack.category">
+            <field name="name">Agro-Business</field>
+            <field name="code">agro</field>
+            <field name="description">Category for agro‑business packs.</field>
+            <field name="active">True</field>
+        </record>
+        <record id="category_default" model="saas.pack.category">
+            <field name="name">Default</field>
+            <field name="code">default</field>
+            <field name="description">Default category for existing packs</field>
+            <field name="active">True</field>
+        </record>
+        <record id="category_logistics" model="saas.pack.category">
+            <field name="name">Logistique</field>
+            <field name="code">logistics</field>
+            <field name="description">Category for logistics packs.</field>
+            <field name="active">True</field>
+        </record>
+        <record id="category_real_estate" model="saas.pack.category">
+            <field name="name">Immobilier</field>
+            <field name="code">real_estate</field>
+            <field name="description">Category for real‑estate packs.</field>
+            <field name="active">True</field>
+        </record>
+    </data>
+</odoo>
