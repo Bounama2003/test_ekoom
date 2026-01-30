@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_saas_assign_pack_form" model="ir.ui.view">
+        <field name="name">saas.assign.pack.form</field>
+        <field name="model">saas.assign.pack</field>
+        <field name="arch" type="xml">
+            <form string="Assign Business Pack">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="tenant_id"/>
+                            <field name="current_pack_id" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="pack_id" required="1"/>
+                        </group>
+                    </group>
+                    <group string="Modules Included in Pack">
+                        <field name="modules_to_install" nolabel="1" widget="many2many_tags" readonly="1"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_assign_pack" string="Assign Pack" type="object" class="oe_highlight"/>
+                    <button string="Cancel" special="cancel" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_saas_assign_pack" model="ir.actions.act_window">
+        <field name="name">Assign Pack</field>
+        <field name="res_model">saas.assign.pack</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_saas_tenant"/>
+        <field name="binding_view_types">form</field>
+    </record>
+</odoo>

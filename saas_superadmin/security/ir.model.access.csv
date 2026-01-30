@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_saas_tenant_user,saas.tenant user,model_saas_tenant,group_saas_manager,1,0,0,0
+access_saas_tenant_manager,saas.tenant manager,model_saas_tenant,group_saas_manager,1,1,1,0
+access_saas_pack_user,saas.pack user,model_saas_pack,group_saas_manager,1,0,0,0
+access_saas_pack_manager,saas.pack manager,model_saas_pack,group_saas_manager,1,1,1,0
+access_saas_superadmin_tenant,saas.tenant superadmin,model_saas_tenant,group_saas_superadmin,1,1,1,1
+access_saas_superadmin_pack,saas.pack superadmin,model_saas_pack,group_saas_superadmin,1,1,1,1
+access_saas_create_tenant_superadmin,saas.create.tenant superadmin,model_saas_create_tenant,group_saas_superadmin,1,1,1,1
+access_saas_assign_pack_superadmin,saas.assign.pack superadmin,model_saas_assign_pack,group_saas_superadmin,1,1,1,1
+access_saas_change_pack_superadmin,saas.change.pack superadmin,model_saas_change_pack,group_saas_superadmin,1,1,1,1
+access_saas_deactivate_tenant_superadmin,saas.deactivate.tenant superadmin,model_saas_deactivate_tenant,group_saas_superadmin,1,1,1,1
+access_saas_pack_category_user,saas.pack.category user,model_saas_pack_category,group_saas_manager,1,0,0,0
+access_saas_pack_category_manager,saas.pack.category manager,model_saas_pack_category,group_saas_manager,1,1,1,0
+access_saas_pack_category_superadmin,saas.pack.category superadmin,model_saas_pack_category,group_saas_superadmin,1,1,1,1

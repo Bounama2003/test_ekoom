@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Agro-Business Packs -->
+        <record id="pack_agro_usine" model="saas.pack">
+            <field name="name">Pack Usine Connectée</field>
+            <field name="code">AGRO_USINE</field>
+            <field name="category_id" ref="category_agro"/>
+            <field name="description">Pack pour la gestion d'usine connectée avec MRP, qualité, maintenance et stock.</field>
+            <field name="is_predefined">True</field>
+            <field name="module_ids" eval="[]"/>
+        </record>
+
+        <record id="pack_agro_distribution" model="saas.pack">
+            <field name="name">Pack Distribution &amp; Force de Vente</field>
+            <field name="code">AGRO_DISTRIBUTION</field>
+            <field name="category_id" ref="category_agro"/>
+            <field name="description">Pack pour la distribution et la force de vente avec vente, CRM, stock multi-entrepôt et signature.</field>
+            <field name="is_predefined">True</field>
+            <field name="module_ids" eval="[]"/>
+        </record>
+
+        <record id="pack_agro_export" model="saas.pack">
+            <field name="name">Pack Export &amp; Conformité</field>
+            <field name="code">AGRO_EXPORT</field>
+            <field name="category_id" ref="category_agro"/>
+            <field name="description">Pack pour l'export et la conformité avec documents, e-commerce et automatisation marketing.</field>
+            <field name="is_predefined">True</field>
+            <field name="module_ids" eval="[]"/>
+        </record>
+
+        <!-- Logistique Pack -->
+        <record id="pack_log_flotte" model="saas.pack">
+            <field name="name">Pack Performance Flotte</field>
+            <field name="code">LOG_FLOTTE</field>
+            <field name="category_id" ref="category_logistics"/>
+            <field name="description">Pack pour la gestion de flotte avec véhicules, service sur site, achats, notes de frais et comptes analytiques.</field>
+            <field name="is_predefined">True</field>
+            <field name="module_ids" eval="[]"/>
+        </record>
+
+        <!-- Immobilier Pack -->
+        <record id="pack_immo_gestion" model="saas.pack">
+            <field name="name">Pack Gestion Immobilière</field>
+            <field name="code">IMMO_GESTION</field>
+            <field name="category_id" ref="category_real_estate"/>
+            <field name="description">Pack pour la gestion immobilière avec abonnements, CRM, calendrier, service sur site et comptabilité.</field>
+            <field name="is_predefined">True</field>
+            <field name="module_ids" eval="[]"/>
+        </record>
+    </data>
+</odoo>
